@@ -404,6 +404,8 @@ button:hover{
 }
 #nav a:hover{
     text-decoration: underline;
+    color: whitesmoke;
+    transition: ease-in 0.3s;
 }
 
 /* =============Video================= */
