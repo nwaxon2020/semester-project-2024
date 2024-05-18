@@ -1,0 +1,387 @@
+:root{
+    --header-color: whitesmoke;
+    --title-color: #ef233c;
+    --hover-color: #70e000;
+    --view-background: #212529;
+    --hover-effect1: 0.8;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: #000;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+
+.head a{
+    color: var(--title-color);
+    text-decoration: none;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: normal;
+}
+.head a:hover{
+    opacity: var(--hover-effect1);
+    color: var(--title-color);
+    text-decoration: none;
+}
+
+ul{
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    padding: 30px 0px;
+}
+ul a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--header-color);
+    font-size: 1rem;
+}
+
+ul a:hover{
+    text-decoration: underline;
+    transition: ease-in-out;
+}
+.active{
+    color: var(--hover-color);
+}
+
+form input{
+    padding: 0.50rem;
+    width: 20rem;
+    border-radius: 50px 0 0 50px;
+    margin: 0px;
+    border: none;
+}
+form button{
+    border: none;
+    padding: 0.50rem 1.5rem;
+    border-radius: 0px 50px 50px 0px;
+    font-weight: bolder;
+    color: var(--header-color);
+    background-color: #03045e;
+}
+input:focus{
+    outline: solid 1px var(--title-color);
+}
+
+
+/* =========================main part================= */
+#main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin: 0 auto;
+}
+#main ul{
+    max-height: 30rem;
+    overflow-y: auto;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0px;
+    font-size: 0.95rem;
+    color: #665;
+    cursor: pointer;
+    user-select: none;
+}
+
+#main .active, #main li:hover{
+    color: var(--header-color);
+    font-size: 1rem;
+    transition: ease-in 0.2s;
+
+}
+#main ul::-webkit-scrollbar {
+    width: 0px; /* To style the scroller */
+  }
+
+#main #genres:hover ul::-webkit-scrollbar {
+    width: 3px; /* To style the scroller hovering */
+    background: #f1f1f1; /* Track color */
+  }
+
+#main #genres:hover ul::-webkit-scrollbar-thumb {
+    background: #ef233c; /* Thumb color */
+  }
+
+/* ============View Port======================== */
+#main .view-port{
+    margin: 0px auto;
+    max-width: 90%;
+    padding: 40px;
+    background-color: var(--view-background);
+    border-radius: 2rem;
+    box-shadow: inset 2px 2px 50px #000;
+}
+.movie-hero-image{
+    background-color: var(--view-background);
+    border-radius: 10px; 
+    width: 100%;
+    max-height: 30rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.movie-hero-image img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.hero-info p{
+    display: block;
+    color: var(--header-color);
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 35%;
+    left: 30%;
+    max-width: 20rem;
+    padding: 15px;
+    padding-bottom: 50px;
+    border-radius: 1rem;
+}
+.hero-info button{
+    padding: 0.5rem 2rem;
+    background-color: var(--title-color);
+    color: var(--header-color);
+    font-weight: bolder;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: 41.5%;
+    margin-top: 30px;
+}
+button:hover{
+    opacity: var(--hover-effect1);
+    cursor: pointer;
+}
+
+
+/* =============trending============= */
+.trilers{
+    position: relative;
+}
+.trilers h3, .polpular h3{ /* h3 formart */
+    background-color: #111;
+    padding: 20px 50px;
+    color: var(--title-color);
+}
+.triler-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;    /*scroller*/
+    padding: 10px 30px 30px 3dvi;
+}
+.trilers .triler-img::-webkit-scrollbar {
+    width: 0px; /* To style the scroller */
+  }
+
+.trilers:hover .triler-img::-webkit-scrollbar {
+    width: 2px; /* To style the scroller hovering */
+    background: #f1f1f1; /* Track color */
+  }
+
+.trilers:hover .triler-img::-webkit-scrollbar-thumb {
+    background: #ef233c; /* Thumb color */
+  }
+
+
+.trilers img{
+    width: 12rem;
+    height: 18rem;
+    border-radius: 2rem;
+    border: 1px solid #111;
+}
+.trilers button{
+    position: absolute;
+    top: 50%;
+    font-size: 35px;
+    width: 40px;
+    color: var(--title-color);
+    text-align: center;
+    border: 0.5px  #999;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bolder;
+    font-family: "Poetsen One";
+    
+}
+.trilers .fw{ 
+    right: 30px;
+}
+.bw{
+    left: 30px;
+}
+
+/* ===========Hero============================ */
+#hero{
+    margin: 80px auto;
+    text-align: center;
+    width: 80%;
+    border-top: 1px solid #9999;
+    border-bottom: 1px solid #9999;
+    box-shadow: 2px 2px 50px  #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#hero img{
+   width: 100%;
+}
+/* =============Polpular============= */
+.polpular{
+    margin-top: 15px;
+    background-color: #181a17;
+}
+.polpular h3{
+    background-color: #000;
+}
+.polpular .triler-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-div{
+    width: 10rem;
+    height: 15rem;
+    border-radius: 2rem;
+    border: 1px solid #222;
+    background-color: #70e000;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+   /* difrent image testing */
+.img-div:nth-child(2){
+    background-image: url(../Images/test\ picture-2.jpg);
+}
+.img-div:nth-child(3){
+    background-image: url(../Images/test\ picture.webp);
+}
+.img-div:nth-child(5){
+    background-image: url(../Images/test\ picture-2.jpg);
+}
+.img-div:nth-child(6){
+    background-image: url(../Images/test\ picture.webp);
+}
+.img-div:nth-child(7){
+    background-image: url(../Images/test\ picture-3.jpg);
+}
+.img-div:nth-child(8){
+    background-image: url(../Images/test\ picture-2.jpg);
+}
+.img-div:nth-child(9){
+    background-image: url(../Images/test\ picture.webp);
+}
+.img-div:nth-child(10){
+    background-image: url(../Images/test\ picture-3.jpg);
+}
+.img-div:nth-child(){
+    background-image: url(../Images/test\ picture.webp);
+}
+.img-div:nth-child(11){
+    background-image: url(../Images/test\ picture-2.jpg);
+}
+.img-div:nth-child(12){
+    background-image: url(../Images/test\ picture-3.jpg);
+}
+.img-div:nth-child(13){
+    background-image: url(../Images/test\ picture.webp);
+}
+
+
+
+
+.img-div div{
+    margin-top: 85%;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.img-div h5, .img-div h4{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.img-div i{
+    font-size: 25px;
+    margin-top: 8px;
+}
+.img-div i:hover{
+    opacity: var(--hover-effect1);
+}
+.img-div:hover{
+    transition: ease-in-out 1s;
+    transform: scale(1.1);
+}
+
+
+/* ======================Footer================ */
+#footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+#footer #links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+#footer p{
+    padding: 10px;
+}
+#footer p a{
+    color: goldenrod;
+}
+#footer p:nth-child(4){
+    text-decoration: underline;
+}
+#footer div a{
+    font-size: 30px;
+}
+/* ===============Footer Links=================== */
+#tags{
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--view-background);
+    border-radius: 1rem;
+    margin: 30px auto;
+}
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+#nav a{
+    color: var(--title-color);
+    font-weight: bolder;
+    text-decoration: none;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    padding: 0px 5px;
+}
+#nav a:hover{
+    text-decoration: underline;
+}
