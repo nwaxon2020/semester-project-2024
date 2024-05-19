@@ -436,8 +436,9 @@ button:hover{
     margin: 50px auto;
 }
 .you-may-like h3{
+    background-color: #111;
+    padding: 20px 50px;
     color: var(--title-color);
-    padding: 10px 40px;
 }
 .you-img img{
     width: 150px;
