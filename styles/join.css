@@ -1,0 +1,58 @@
+:root{
+    --header-color: whitesmoke;
+    --title-color: #ef233c;
+    --hover-color: #70e000;
+    --view-background: #212529;
+    --hover-effect1: 0.8;
+}
+
+#join-us{
+    background-color: #03045e;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 30rem;
+    border-radius: 1rem;
+    padding: 5rem;
+}
+#join-us form{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 25rem;
+}
+#join-us form input{
+    display: block;
+    padding: 0.75rem;
+    width: 90%;
+    border-radius: 5px;
+    margin: 0px;
+    border: none;
+    margin: 2rem auto;
+}
+#join-us form input[name="checked"]{
+    display: inline;
+    width: 5%;
+}
+#join-us form div{
+    margin-top: -25px;
+    width: 100%;
+}
+#join-us form h4{
+    display: inline;
+    margin-right: 40px;
+}
+#join-us form p{
+    display: inline;
+    margin: 5px;
+}
+#join-us form .p{
+    margin-right: 3rem;
+}
+
+#join-us form input[type="radio"]{
+    display: inline;
+    width: 10px;
+    padding: 50px;
+}
+input:focus{
+    outline: none;
+}
