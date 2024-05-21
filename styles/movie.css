@@ -455,6 +455,7 @@ button:hover{
 .video-element {
     width: 100%;
     height: 300px;
+    border: none;
 }
 .you-may-like{
     margin: 50px auto;
