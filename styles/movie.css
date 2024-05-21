@@ -399,7 +399,7 @@ button:hover{
     color: #665;
 }
 #footer p a{
-    color: goldenrod;
+    color: #daa520;
 }
 #footer p:nth-child(4){
     text-decoration: underline;
@@ -415,7 +415,6 @@ button:hover{
 /* ===============Footer Links=================== */
 #tags{
     width: 60%;
-    margin: 0 auto;
     padding: 10px;
     background-color: var(--view-background);
     border-radius: 1rem;

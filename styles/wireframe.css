@@ -1,0 +1,128 @@
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+} 
+h1 span{
+    color: #ef233c;
+    text-decoration: none;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: normal;
+}
+#wire-frame-img{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+#wire-frame-img img{
+    width: 100%;
+}
+h3{
+    margin-top: 5rem;
+    font-weight: bolder;
+    color: #ef233c;
+}
+#sample-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#sample-img h3{
+    display: block;
+}
+#sample-img img{
+    width: 15rem;
+    height:15rem;
+}
+table{
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+#links a{
+    font-size: 30px;
+    margin: 2rem;
+}
+#links a:hover{
+    color: #03045e;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+/* Primary Colors */
+.color-ef233c {
+    background-color: #ef233c;
+}
+
+.color-70e000 {
+    background-color: #70e000;
+}
+
+.color-212529 {
+    background-color: #212529;
+}
+
+.color-f5f5f5 {
+    background-color: #f5f5f5;
+}
+
+/* Secondary Colors */
+.secondary-color-ef233c {
+    background-color: #000;
+}
+
+.secondary-color-70e000 {
+    background-color: #03045e;
+}
+
+.secondary-color-212529 {
+    background-color: #665;
+}
+
+.secondary-color-f5f5f5 {
+    background-color: #daa520;
+}
+
+
+
+/* ================tag link================= */
+#tags{
+    width: 60%;
+    margin: 5rem auto;
+    padding: 10px;
+    background-color: #212529;
+    border-radius: 1rem;
+}
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+#nav a{
+    color: #ef233c;
+    font-weight: bolder;
+    text-decoration: none;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    padding: 0px 5px;
+}
+#nav a:hover{
+    text-decoration: underline;
+    color: whitesmoke;
+    transition: ease-in 0.3s;
+}
