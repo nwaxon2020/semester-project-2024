@@ -1,0 +1,159 @@
+
+/* =========================main part================= */
+.main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin: 0 auto;
+}
+.main ul{
+    max-height: 30rem;
+    overflow-y: auto;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0px;
+    font-size: 0.95rem;
+    color: #665;
+    cursor: pointer;
+    user-select: none;
+}
+
+.main .active, .main li:hover{
+    color: var(--header-color);
+    font-size: 1rem;
+    transition: ease-in 0.2s;
+
+}
+.main ul::-webkit-scrollbar {
+    width: 0px; /* To style the scroller */
+  }
+
+.main .genreszzz:hover ul::-webkit-scrollbar {
+    width: 3px; /* To style the scroller hovering */
+    background: #f1f1f1; /* Track color */
+  }
+
+.main .genreszzz:hover ul::-webkit-scrollbar-thumb {
+    background: #ef233c; /* Thumb color */
+  }
+
+  .sel{
+    color: #ef233c;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+/* ============View Port======================== */
+.main .view-port{
+    margin: 0px auto;
+    max-width: 90%;
+    padding: 40px;
+    background-color: var(--view-background);
+    border-radius: 2rem;
+    box-shadow: inset 2px 2px 50px #000;
+}
+
+
+
+/* =================Moving Text================ */
+#moving-text{
+    width: 100%;
+    padding: 0px 30px;
+    max-width: 40rem;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    color: #000;
+    font-weight: bold;
+    border-radius: 3rem;
+    box-shadow: inset 2px 2px 20px #000;
+    overflow: hidden;
+    z-index: 1;  
+}
+#moving-text div{
+    text-wrap: nowrap;
+    animation: move 20s infinite ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+#moving-text div:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+@keyframes move {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-195%);
+    }
+}
+
+#moving-text span, a{
+    color: blue;
+    text-decoration: none;
+}
+#moving-text a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* ======================Gener=============== */
+.vew{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+}
+
+
+
+/* ===================Pata Hold =========================*/
+.pop-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pop-list img{
+    width: 12rem;
+    height: 10rem;
+}
+#pat{
+    background-color: #000;
+    padding: 40px;
+    margin: 0 auto;
+
+}
+.pat-hold{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    background-color: #665;
+}
+.pat-hold div{
+    width: 18rem;
+    height: 10rem;
+    background-color: yellow;
+    margin: 10px;
+}
+.mid {
+    max-width: 90%;
+    margin: 0 auto;
+}
+.mid div{
+    width: 20rem;
+    height: 10rem;
+    background-color: yellow;
+}
+.pat-hold img{
+    width: 100%;
+    height: 100%;
+}
