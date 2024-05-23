@@ -5,7 +5,9 @@
     --view-background: #212529;
     --hover-effect1: 0.8;
 }
-
+#hambug-nav{
+    display: none;
+}
 body{
     box-sizing: border-box;
     background-color: #000;
@@ -113,6 +115,7 @@ input:focus{
 /* ============View Port======================== */
 #main .view-port{
     margin: 0px auto;
+    width: 100%;
     max-width: 90%;
     padding: 40px;
     background-color: var(--view-background);
@@ -123,7 +126,6 @@ input:focus{
     background-color: var(--view-background);
     border-radius: 10px; 
     width: 100%;
-    max-height: 30rem;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -131,7 +133,7 @@ input:focus{
 
 .movie-hero-image img{
     width: 100%;
-    object-fit: contain;
+    height: 30rem;
 }
 
 .hero-info p{
@@ -244,9 +246,8 @@ button:hover{
     border: 1px solid #555;
 }
 #hero1, #hero2{
-    width: 90%;
-    max-width: 20rem;
-    max-height: 20rem;
+    width: 20rem;
+    height: 20rem;
     text-align: center;   
     border-radius: 1rem;
     overflow: hidden; 

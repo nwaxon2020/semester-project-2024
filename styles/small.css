@@ -1,5 +1,201 @@
 @media (max-width: 750px) {
-    body{
-        background-color: white;
+    #large-nav{
+        display: none;
+    }
+    #hambug-nav{
+        display: grid;
+        grid-template-columns: 1fr 3.5fr 0.5fr;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        padding: 10px 5px;
+    }
+    #hambug-nav h5 a{
+        font-size: 25px;
+        padding: 5px;
+        width: 100%;
+    }
+    #hambug-nav form{
+        width: 100%;
+    }
+    #hambug-nav form input{
+        padding: 0.4rem;
+        width: 70%;
+        border-radius: 50px 0 0 50px;
+        margin: 0px;
+        border: none;
+    }
+    #hambug-nav form button{
+        width: 20%;
+        border: none;
+        border-radius: 0px 50px 50px 0px;
+        font-weight: bolder;
+        color: var(--header-color);
+        background-color: #03045e;
+        padding: 0.4rem 5px;
+    }
+    #hambug-nav ul{
+        display: none;
+    }
+    #hambug-nav .hambug{
+        display: block;
+        padding: 0.5rem;
+        border: none;
+        box-shadow: 2px 2px 15px #999;
+        border-radius: 10px;
+        margin-left: 8px;
+    }
+    #hambug-nav .fa-bars{
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+
+
+
+    /* =========main============= */
+    #main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #main #genres{
+        width: 100%;
+    }
+    #main .genres{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        margin: 0 auto;
+
+
+    }
+    #main .genres li{
+        border: 1px solid #ef233c;
+        padding: 5px 15px;
+        text-wrap: nowrap;
+        border-radius: 10px;
+    }
+
+    /* =========View Port========= */
+    #main .view-port{
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #main .movie-hero-image{
+        width: 100%;
+        object-fit: none;
+    }
+    #main .movie-hero-image img{
+        width: 100%;
+        height: 15rem;
+    }
+ 
+    .hero-info p{
+        top: 10px;
+        left: 20px;
+        width: 15rem;
+        text-align: left;  
+        padding: 10px; 
+        border-top: 1px solid #fff;  
+        border-bottom: 1px solid #fff;  
+    }
+    .hero-info button{
+        position: static;
+        z-index: 1;
+        top: auto;
+        left: auto;
+        margin: 15px auto;
+    }
+
+    /* =============trending============= */
+    .trilers h3, .polpular h3{ /* h3 formart */
+        padding: 10px 30px;
+        font-size: 18px;
+        margin-top: 50px;
+    }
+    .trilers img{
+        width: 8rem;
+        height: 12rem;
+        border-radius: 2rem;
+        border: 1px solid #111;
+    }
+
+    /* ====================Hero=============== */
+#hero-line{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#hero{
+    width: 20rem;
+    height: 20rem;
+    z-index: 0;
+    margin: 1rem 0;
+    align-self: center;
+}
+#hero1, #hero2{
+    width: 20rem;
+    height: 20rem;
+    align-self: center;
+    border: 1px solid #999;
+}
+#hero1, #hero2{
+    margin: 15px auto;
+}
+
+.polpular .triler-img{
+    max-height: 50rem;
+    overflow:auto ;
+    gap: 10px;
+}
+   
+.polpular .triler-img::-webkit-scrollbar {
+    width: 0px; /* To style the scroller */
+  }
+
+.polpular:hover .triler-img::-webkit-scrollbar {
+    width: 2px; /* To style the scroller hovering */
+    background: #f1f1f1; /* Track color */
+  }
+
+.polpular:hover .triler-img::-webkit-scrollbar-thumb {
+    background: #ef233c; /* Thumb color */
+  }
+  .img-div{
+    width: 8rem;
+    height: 10rem;
+    border-radius: 1rem;
+}
+/* ===================Video-================ */
+.video-container {
+    margin: 5rem auto;
+    display: block;
+    width: 98%;
+    padding: 10px;
+}
+
+.video-element {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+}
+
+
+
+
+
+
+@media (max-width: 500px) {
+    #hambug-nav h5 a{
+        align-self: self-start;
+        font-size: 20px;
+        margin-right: 10px;
     }
 }
