@@ -185,6 +185,37 @@
     border: none;
 }
 
+/* ==========You may like============== */
+.you-may-like{
+    width: 100%;
+}
+.you-may-like .you-img{
+    display: flex;
+    flex-wrap: wrap;
+    height: 55rem;
+    overflow: auto;
+    padding: 5px;
+    justify-content: center;
+    gap: 10px;
+    width: 98%;
+}
+.you-img img{
+    width: 8rem;
+    height: 10rem;
+}
+.you-may-like .you-img::-webkit-scrollbar {
+    width: 0px; /* To style the scroller */
+  }
+
+.you-may-like:hover .you-img::-webkit-scrollbar {
+    width: 2px; /* To style the scroller hovering */
+    background: #f1f1f1; /* Track color */
+  }
+
+.you-may-like:hover .you-img::-webkit-scrollbar-thumb {
+    background: #ef233c; /* Thumb color */
+  }
+
 }
 
 
