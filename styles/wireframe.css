@@ -126,3 +126,15 @@ th {
     color: whitesmoke;
     transition: ease-in 0.3s;
 }
+
+
+@media (max-width: 500px) {
+    #tags{
+        width: 80%;
+        margin: 5rem auto;
+        padding: 10px;
+        background-color: #212529;
+        border-radius: 1rem;
+    }
+ 
+}
