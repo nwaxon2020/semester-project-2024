@@ -57,15 +57,15 @@
    <div id="join-us">
         <form method="post">
             <h1>Join Us</h1>
-            <input type="text" name="fname" placeholder="First Name">
-            <input type="text" name="lname" placeholder="Last Name">
-            <input type="email" name="email" placeholder="@email" class="em">
-            <input type="checkbox" name="checked"> <label>Subscibe</label>
+            <input type="text" name="fname" placeholder="First Name" required>
+            <input type="text" name="lname" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="@email" class="em" required>
+            <input type="checkbox" name="checked" required> <label>Subscibe</label>
                
             <div>
                 <h4>Are you above 18yrs?</h4>
-                <input type="radio" name="age" value="yes"> <p class="p">Yes</p>
-                <input type="radio" name="age" value="no"> <p>No</p>
+                <input type="radio" name="age" value="yes" required> <p class="p">Yes</p>
+                <input type="radio" name="age" value="no" required> <p>No</p>
             </div>
 
             <button id="join" type="submit">Join Now!</button>

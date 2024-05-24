@@ -58,6 +58,9 @@
 input:focus{
     outline: none;
 }
+#join-us form input:required{
+    border-left: 3px solid red;
+}
 
 #join{
     padding: 0.5rem 3rem;
