@@ -4,6 +4,7 @@
         margin: 0px;
         padding: 0px;
     }
+    
     #large-nav{
         display: none;
     }
@@ -73,7 +74,7 @@
         margin-bottom: 1rem;
     }
     #hambug-ul li{
-        margin: 1rem 0;
+        margin: 0.8rem 0;
     }
 
     /* =========main============= */
@@ -246,6 +247,7 @@
     display: block;
     width: 100%;
     padding: 10px;
+    text-align: center;
 }
 
 .video-element {
@@ -296,6 +298,9 @@
     padding: 10px;
 
 }
+#footer p{
+    margin: 20px auto;
+}
 #footer {
     text-align: center;
 }
@@ -313,16 +318,27 @@
     margin: 30px auto;
 }
 
-
-/* ==========Join us================ */
-#join-us{
-    width: 95%;
-}
-
-#join-us form input{
-    width: 100%;
-}
-
+    /* =========================================================== */
+    /* LIGHT MODE DISPLAY */
+    .light-body{
+        background-color: #fff;
+        color: #000;
+    }
+    .light-body nav{
+        background-color: #000;
+    }
+    .light-body #main .genres .active{
+        color: #111;
+        font-weight: bolder;
+    }
+    .light-body #hambug-ul{
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-left: 1px solid #999;
+        border-bottom: 1px solid #999;
+    }
+    
+    /* ========================================================== */
 
 }
 

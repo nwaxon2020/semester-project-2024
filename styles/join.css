@@ -13,6 +13,7 @@
     max-width: 30rem;
     border-radius: 1rem;
     padding: 1.5rem;
+    color: #fff;
 }
 #join-us form{
     margin: 0 auto;
@@ -79,4 +80,15 @@ input:focus{
     color: #f5f5f5;
     opacity: 1;
     transition: ease-in 0.2s;
+}
+
+@media (max-width: 750px) {
+    #join-us{
+        width: 95%;
+    }
+    
+    #join-us form input{
+        width: 100%;
+    }
+    
 }
