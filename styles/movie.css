@@ -184,8 +184,8 @@ button:hover{
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    overflow-x: auto;    /*scroller*/
-    padding: 10px 30px 30px 3dvi;
+    overflow: auto;    /*scroller*/
+    padding: 10px 30px 30px 3px;
 }
 .trilers .triler-img::-webkit-scrollbar {
     width: 0px; /* To style the scroller */
