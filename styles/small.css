@@ -3,7 +3,8 @@
         display: none;
     }
     body{
-        margin: 0 auto;
+        margin: 0px;
+        padding: 0px;
     }
     #hambug-nav{
         display: grid;
@@ -37,9 +38,6 @@
         background-color: #03045e;
         padding: 0.4rem 5px;
     }
-    #hambug-nav ul{
-        display: none;
-    }
     #hambug-nav .hambug{
         display: block;
         padding: 0.5rem;
@@ -54,7 +52,29 @@
 
     }
 
-
+    /* ========= ul li links========== */
+    #hambug-ul{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        padding-right: 0px;
+        background-color: rgba(239, 35, 60, 0.2);
+        border-left: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-bottom-left-radius: 1rem;
+        width: 50%;
+        position:relative;
+        left: 15px;
+        margin-left: 40%;
+        margin-bottom: 1rem;
+    }
+    #hambug-ul li{
+        margin: 1rem 0;
+    }
 
     /* =========main============= */
     #main{
@@ -63,6 +83,7 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        width: 100%;
     }
     #main #genres{
         width: 100%;
@@ -125,6 +146,9 @@
         background: #5555; /* Thumb color */
       }
     /* =============trending============= */
+    main .trilers{
+        width: 100%;
+    }
     .trilers h3{ /* h3 formart */
         padding: 10px 30px;
         font-size: 18px;
@@ -214,18 +238,18 @@
     border-radius: 1rem;
 }
 .img-div div{
-    margin-top: 65%;
+    margin-top: 65%; /*Hoding title under popular*/
 }
 /* ===================Video-================ */
 .video-container {
     margin: 5rem auto;
     display: block;
-    width: 98%;
+    width: 100%;
     padding: 10px;
 }
 
 .video-element {
-    width: 100%;
+    width: 90%;
     height: 300px;
     border: none;
     margin: 10px auto;
@@ -251,7 +275,7 @@
     gap: 8px;
 }
 .you-img img{
-    width: 6rem;
+    width: 6.5rem;
     height: 8rem;
 }
 .you-may-like .you-img::-webkit-scrollbar {

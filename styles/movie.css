@@ -5,7 +5,7 @@
     --view-background: #212529;
     --hover-effect1: 0.8;
 }
-#hambug-nav{
+#hambug-nav, #hambug-ul{
     display: none;
 }
 body{
