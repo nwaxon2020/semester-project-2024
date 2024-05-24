@@ -1,11 +1,13 @@
 @media (max-width: 750px) {
-    #large-nav{
-        display: none;
-    }
-    body{
+    *{
+        box-sizing: border-box;
         margin: 0px;
         padding: 0px;
     }
+    #large-nav{
+        display: none;
+    }
+
     #hambug-nav{
         display: grid;
         grid-template-columns: 1fr 3.5fr 0.5fr;
@@ -67,9 +69,7 @@
         border-bottom: 1px solid #999;
         border-bottom-left-radius: 1rem;
         width: 50%;
-        position:relative;
-        left: 15px;
-        margin-left: 40%;
+        margin-left: 50%;
         margin-bottom: 1rem;
     }
     #hambug-ul li{
@@ -335,5 +335,4 @@
     #main .movie-hero-image img{
         height: 15rem;
     }
- 
 }
