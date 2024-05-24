@@ -288,6 +288,18 @@
     border-radius: 1rem;
     margin: 30px auto;
 }
+
+
+/* ==========Join us================ */
+#join-us{
+    width: 85%;
+}
+
+#join-us form input{
+    width: 95%;
+}
+
+
 }
 
 @media (max-width: 500px) {

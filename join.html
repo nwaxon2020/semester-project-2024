@@ -10,8 +10,8 @@
 
     <!-- Style Sheets -->
     <link rel="stylesheet" href="styles/movie.css">
-    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/small.css">  
 
     <!-- fa fa Awsome fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,20 +23,34 @@
 </head>
 <body>
     <header>
-        <nav>           
+        <nav id="large-nav">           
             <ul>
                 <li class="head"><a href="index.html">Moviez-Zone <i class="fa fa-video-camera"></i></a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li>
-                    <form>
+                    <form >
                         <input type="text" placeholder="Search Your Movie....." name="movie--name" >
                         <button type="submit">Search</button>
                     </form>
                 </li>
                 <li><a href="wire-frame.html">Wire-Frame</a></li>
-                <li><a href="join.html" class="active">Join Us</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
+        </nav>
 
+        <nav id="hambug-nav">
+            <h5 class="head"><a href="index.html">Moviez Zone <i class="fa fa-video-camera"></i></a></h5>
+            <form >
+                <input type="text" placeholder="Search Your Movie....." name="movie--name" >
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="wire-frame.html">Wire-Frame</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><i class="fa fa-adjust" style="font-size:36px"></i></li>
+            </ul>
+            <button class="hambug"><i class="fa fa-bars"></i></button>
         </nav>
     </header>
 
