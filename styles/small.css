@@ -2,6 +2,9 @@
     #large-nav{
         display: none;
     }
+    body{
+        margin: 0 auto;
+    }
     #hambug-nav{
         display: grid;
         grid-template-columns: 1fr 3.5fr 0.5fr;
@@ -233,10 +236,9 @@
     width: 100%;
 }
 .you-may-like h3{
-    width: 100%;
+    padding: 10px 30px;
     font-size: 18px;
     margin-top: 50px;
-    margin-bottom: 10px;
 }
 .you-may-like .you-img{
     width: 100%;
@@ -246,7 +248,7 @@
     overflow: auto;
     padding: 5px;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
 }
 .you-img img{
     width: 7.5rem;
@@ -257,20 +259,36 @@
   }
 
 .you-may-like:hover .you-img::-webkit-scrollbar {
-    width: 2px; /* To style the scroller hovering */
+    width: 0px; /* To style the scroller hovering */
     background: #f1f1f1; /* Track color */
   }
 
-.you-may-like:hover .you-img::-webkit-scrollbar-thumb {
-    background: #ef233c; /* Thumb color */
-  }
 
+  /* ==========footer======= */
+  #footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+#footer {
+    text-align: center;
+}
+#footer ul{
+    align-items: center;
 }
 
 
-
-
-
+  /*============footer links========= */
+  #tags{
+    width: 90%;
+    padding: 10px;
+    background-color: var(--view-background);
+    border-radius: 1rem;
+    margin: 30px auto;
+}
+}
 
 @media (max-width: 500px) {
     #hambug-nav h5 a{
