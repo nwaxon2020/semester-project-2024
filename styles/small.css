@@ -209,7 +209,7 @@
 
   }
   .img-div{
-    width: 11rem;
+    width: 10rem;
     height: 14rem;
     border-radius: 1rem;
 }
@@ -244,7 +244,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    height: 35rem;
+    height: 30rem;
     overflow: auto;
     padding: 5px;
     justify-content: center;
