@@ -58,7 +58,13 @@
 
 
 /* =================Moving Text================ */
-#moving-text{
+.top{
+    display: none;
+}
+.down{
+    display: block;
+}
+.moving-text{
     width: 100%;
     padding: 0px 30px;
     max-width: 40rem;
@@ -71,7 +77,7 @@
     overflow: hidden;
     z-index: 1;  
 }
-#moving-text div{
+.moving-text div{
     text-wrap: nowrap;
     animation: move 20s infinite ease-in-out;
     display: flex;
@@ -79,7 +85,7 @@
     align-items: center;
     gap: 1.5rem;
 }
-#moving-text div:hover{
+.moving-text div:hover{
     animation-play-state: paused;
     cursor: pointer;
 }
@@ -92,11 +98,11 @@
     }
 }
 
-#moving-text span, a{
+.moving-text span, a{
     color: blue;
     text-decoration: none;
 }
-#moving-text a:hover{
+.moving-text a:hover{
     text-decoration: underline;
 }
 
@@ -120,6 +126,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
 .pop-list img{
     width: 12rem;
     height: 10rem;
@@ -138,9 +145,9 @@
     gap: 20px;
     background-color: #665;
 }
-.pat-hold div{
-    width: 18rem;
-    height: 10rem;
+.pat-hold div{ /*detarmins image size*/
+    width: 20rem;
+    height: 15rem;
     background-color: yellow;
     margin: 10px;
 }
@@ -149,8 +156,8 @@
     margin: 0 auto;
 }
 .mid div{
-    width: 20rem;
-    height: 10rem;
+    width: 25rem;
+    height: 15rem;
     background-color: yellow;
 }
 .pat-hold img{
@@ -159,5 +166,47 @@
 }
 
 @media (max-width: 750px) {
+    /* ========Moving text top========= */
+    .down{
+        display: none;
+    }
+    .top{
+        display: block;
+    }
+   .moving-text{
+        width: 90%;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .main .genreszzz{
+        width: 100%;
+    }
+    .main .genreszzz h4{
+        margin-top: 30px;
+        text-align: left;
+        padding-left: 20px;
+    }
+    .main .genres{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        margin: 0 auto;
+
+
+    }
+    .main .genres li{
+        border: 1px solid #ef233c;
+        padding: 5px 15px;
+        text-wrap: nowrap;
+        border-radius: 10px;
+    }
     
 }
