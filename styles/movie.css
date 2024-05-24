@@ -4,7 +4,7 @@
     --hover-color: #70e000;
     --view-background: #212529;
     --hover-effect1: 0.8;
-}
+}   
 #hambug-nav, #hambug-ul{
     display: none;
 }
@@ -13,6 +13,11 @@ body{
     background-color: #000;
     color: whitesmoke;
     font-family: sans-serif;
+    
+       
+    overflow-x: hidden;
+    
+ 
 }
 
 .head a{
@@ -184,7 +189,7 @@ button:hover{
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    overflow: auto;    /*scroller*/
+    overflow: auto; /*scroller*/
     padding: 10px 30px 30px 3px;
 }
 .trilers .triler-img::-webkit-scrollbar {
