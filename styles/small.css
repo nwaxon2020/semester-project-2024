@@ -90,13 +90,11 @@
         width: 100%;
     }
     #main .genres{
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: row;
-        padding: 10px;
-        margin: 0 auto;
-
-
+        align-items: flex-end;
+        padding: 0px;
     }
     #main .genres li{
         border: 1px solid #ef233c;
@@ -356,4 +354,5 @@
     #main .movie-hero-image img{
         height: 15rem;
     }
+
 }

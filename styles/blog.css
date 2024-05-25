@@ -213,10 +213,8 @@
         width: 100%;
         display: flex;
         flex-direction: row;
+        align-items: flex-end;
         padding: 10px 30px;
-        margin: 0 auto;
-
-
     }
     .main .genres li{
         border: 1px solid #ef233c;
