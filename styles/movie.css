@@ -394,8 +394,10 @@ button:hover{
 /* =======You may like============ */
 .you-may-like{
     margin: 50px auto;
+    text-align: center;
 }
 .you-may-like h3{
+    text-align: left;
     background-color: #111;
     padding: 20px 50px;
     color: var(--title-color);
