@@ -213,7 +213,7 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        padding: 10px;
+        padding: 10px 30px;
         margin: 0 auto;
 
 
@@ -230,8 +230,14 @@
     .main .view-port{
         max-width: 98%;
         padding: 10px;
+        margin-top: 20px;
+    }   
+    .blog .you-may-like{
+        margin: 20px auto;
     }
-   
+    .blog .you-may-like h3{
+        margin-top: 0px;
+    }
     .you-may-like-blog h3{
         width: 100%;
         padding: 10px 30px;
@@ -254,8 +260,8 @@
         align-items: center;
     }
     .main .vew img{
-        width: 7rem;
-        height: 10rem;
+        width: 6.5rem;
+        height: 8rem;
         gap: 10px;
         margin: 3px auto;
     }
