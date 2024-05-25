@@ -289,4 +289,10 @@
     #pat.pat-hold div img{
         width: 100%;
     }
+
+    .blog-you-may .vew{
+        padding: 10px;
+        margin: 5px auto;
+        overflow: auto;
+    }
 }
