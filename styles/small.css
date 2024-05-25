@@ -87,14 +87,16 @@
         width: 100%;
     }
     #main #genres{
-        width: 100%;
+        width:100%;
+        overflow: hidden;
+        padding: 0px 5px;
     }
     #main .genres{
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        padding: 0px;
+        padding: 10px 30px;
     }
     #main .genres li{
         border: 1px solid #ef233c;

@@ -203,11 +203,8 @@
     }
     .main .genreszzz{
         width: 100%;
-    }
-    .main .genreszzz h4{
-        margin-top: 30px;
-        text-align: left;
-        padding-left: 20px;
+        padding: 0px 5px;
+        overflow: hidden;
     }
     .main .genres{
         width: 100%;
@@ -216,6 +213,12 @@
         align-items: flex-end;
         padding: 10px 30px;
     }
+    .main .genreszzz h4{
+        margin-top: 30px;
+        text-align: left;
+        padding-left: 20px;
+    }
+   
     .main .genres li{
         border: 1px solid #ef233c;
         padding: 5px 15px;
