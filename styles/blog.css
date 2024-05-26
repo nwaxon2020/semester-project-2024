@@ -5,6 +5,7 @@
     grid-template-columns: 1fr 5fr;
     margin: 0 auto;
 }
+
 .main ul{
     max-height: 30rem;
     overflow-y: auto;
@@ -54,8 +55,6 @@
     border-radius: 2rem;
     box-shadow: inset 2px 2px 50px #000;
 }
-
-
 
 /* =================Moving Text================ */
 .top{
@@ -117,8 +116,6 @@
     margin: 20px auto;
 }
 
-
-
 /* ===================Pata Hold =========================*/
 .pop-list{
     display: flex;
@@ -128,7 +125,7 @@
 }
 
 .pop-list img{
-    width: 12rem;
+    width: 10rem;
     height: 10rem;
 }
 #pat{
@@ -180,6 +177,19 @@
     height: 200px;
     border-radius: 5px;
 }
+
+/* =========series h3============ */
+.series{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 7rem;
+    margin-bottom: 0px;
+    text-decoration: underline;
+}
+
+
+
+
 
 @media (max-width: 750px) {
     /* ========Moving text top========= */
