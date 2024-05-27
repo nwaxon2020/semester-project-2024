@@ -356,5 +356,11 @@
     #main .movie-hero-image img{
         height: 15rem;
     }
+    #main .genres li, main .genres li{
+        border: 1px solid #ef233c;
+        padding: 5px 15px;
+        text-wrap: nowrap;
+        border-radius: 10px;
+    }
 
 }
