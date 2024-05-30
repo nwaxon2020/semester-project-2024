@@ -487,3 +487,38 @@ button:hover{
 
 
 
+/* =========================================================== */
+    /* LIGHT MODE DISPLAY */
+    .light-body{
+        background-color: #fff;
+        color: #000;
+    }
+    .light-body nav{
+        background-color: #fff;
+       
+    }
+    .light-body nav ul{
+        border-bottom: 1px solid #ef233c;
+    }
+    .light-body nav ul li a{
+        color: #ef233c;
+    }
+
+    .light-body #main .genres .active{
+        color: #111;
+        font-weight: bolder;
+    }
+
+    .light-body .polpular, .light-body .you-may-like, .light-body .you-may-like-blog{
+        background-color: #f1f1f1;
+    }
+    .light-body input{
+        outline: 0.5px solid #999;
+    }
+
+    .light-body .genres .active{
+        color: #000;
+        font-weight: bolder;
+    }
+    
+    /* ========================================================== */

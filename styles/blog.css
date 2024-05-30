@@ -31,6 +31,10 @@
     width: 0px; /* To style the scroller */
   }
 
+.main {
+    margin-top: 50px;
+}
+
 .main .genreszzz:hover ul::-webkit-scrollbar {
     width: 3px; /* To style the scroller hovering */
     background: #f1f1f1; /* Track color */
@@ -208,7 +212,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin: 1.2rem auto;
         width: 100%;
     }
     .main .genreszzz{
