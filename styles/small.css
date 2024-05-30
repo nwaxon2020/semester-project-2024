@@ -48,17 +48,14 @@
         box-shadow: 2px 2px 15px #999;
         border-radius: 10px;
         margin-left: 8px;
-    }
-    #hambug-nav .fa-bars{
         font-size: 20px;
-        font-weight: bolder;
-
+        width: 100%;
     }
-
+  
     /* ========= ul li links========== */
-    #hambug-ul{
+    .hambug-ul{
         margin: 0 auto;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-start;
@@ -73,10 +70,12 @@
         margin-left: 50%;
         margin-bottom: 1rem;
     }
-    #hambug-ul li{
+    .hambug-ul li{
         margin: 0.8rem 0;
     }
-
+    .show-ul{
+        display: flex;
+    }
     /* =========main============= */
     #main{
         display: flex;
@@ -331,11 +330,13 @@
         color: #111;
         font-weight: bolder;
     }
-    .light-body #hambug-ul{
-        display: flex;
+    .light-body .hambug-ul{
         background-color: rgba(0, 0, 0, 0.5);
         border-left: 1px solid #999;
         border-bottom: 1px solid #999;
+    }
+    .light-body .polpular, .light-body .you-may-like, .light-body .you-may-like-blog{
+        background-color: #f1f1f1;
     }
     
     /* ========================================================== */

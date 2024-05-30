@@ -4,8 +4,10 @@
     --hover-color: #70e000;
     --view-background: #212529;
     --hover-effect1: 0.8;
-}   
-#hambug-nav, #hambug-ul{
+} 
+
+ /*==Mobile View==*/
+#hambug-nav, .hambug-ul{
     display: none;
 }
 body{
