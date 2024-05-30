@@ -338,6 +338,11 @@
     .light-body .polpular, .light-body .you-may-like, .light-body .you-may-like-blog{
         background-color: #f1f1f1;
     }
+
+    .light-body .genres .active{
+        color: #000;
+        font-weight: bolder;
+    }
     
     /* ========================================================== */
 
