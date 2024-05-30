@@ -50,7 +50,7 @@ ul a{
     color: var(--header-color);
     font-size: 1rem;
 }
-ul li .fa-adjust{
+#adj .fa-adjust{
     font-size: 24px;
 }
 
