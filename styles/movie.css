@@ -14,12 +14,8 @@ body{
     box-sizing: border-box;
     background-color: #000;
     color: whitesmoke;
-    font-family: sans-serif;
-    
-       
+    font-family: sans-serif;    
     overflow-x: hidden;
-    
- 
 }
 
 .head a{
@@ -50,8 +46,9 @@ ul a{
     color: var(--header-color);
     font-size: 1rem;
 }
-#adj .fa-adjust{
+.fa-adjust{
     font-size: 24px;
+    margin: 10px;   
 }
 
 ul a:hover{
@@ -515,7 +512,7 @@ button:hover{
     .light-body .polpular, .light-body .you-may-like, .light-body .you-may-like-blog{
         background-color: #f1f1f1;
     }
-    .light-body input{
+    .light-body input[name="movie--name"]{
         outline: 0.5px solid #999;
     }
 
