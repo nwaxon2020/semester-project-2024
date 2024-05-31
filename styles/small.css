@@ -104,6 +104,10 @@
         border-radius: 10px;
     }
 
+    #main ul{
+        border-right: none;
+    }
+
     /* =========View Port========= */
     #main{
         width: 100%;
@@ -135,7 +139,11 @@
         margin: 15px auto;
     }
 
-
+    .movie-hero-image img{
+        width: 30rem;
+        height: 60vh;
+    }
+    
     /* ===============GENER=================== */
     #main #genres:hover ul::-webkit-scrollbar {
         width: 3px; /* To style the scroller hovering */
@@ -360,7 +368,7 @@
     }
 
     #main .movie-hero-image img{
-        height: 15rem;
+        height: 20rem;
     }
     #main .genres li, main .genres li{
         border: 1px solid #ef233c;
