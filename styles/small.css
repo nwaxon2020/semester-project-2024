@@ -368,6 +368,7 @@
     }
 
     #main .movie-hero-image img{
+        width: 100%;
         height: 20rem;
     }
     #main .genres li, main .genres li{
