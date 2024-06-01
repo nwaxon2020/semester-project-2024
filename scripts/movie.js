@@ -34,6 +34,9 @@ humbug.addEventListener("click", ()=>{
 
 // Light Mode ajuster////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", ()=>{
+
+    document.querySelector(".infoPhrase").style.display = "none";
+
     const savedMode = localStorage.getItem("lightMode");
     if(savedMode){
         webBody.className = savedMode;
@@ -104,6 +107,7 @@ function moviesView(data){
     infoHero.className = "hero-info";
 
     const infoPhrase = document.createElement("p");
+    infoPhrase.className = "infoPhrase";
     infoPhrase.textContent = "Hhelloooooooooooo"
 
     const moreInfoBtn = document.createElement("button");
@@ -170,25 +174,50 @@ async function genrHome(){
 
 genrHome();
 
-function genHomeData(gens){
-
+function genHomeData(gens) {
     const gensDatasUnlocked = gens.genres;
- 
-    for(let genName of gensDatasUnlocked){
+    let previousClickedLi = null;
 
-        let genLi = document.createElement("li");
-        genLi.textContent = genName.description; 
+    gensDatasUnlocked.forEach((genName) => {
         
-        genLi.addEventListener("click", ()=>{
-            
-            genLi.style.fontWeight = "bolder";
-     
-        })
+        let genLi = document.createElement("li");
+        genLi.textContent = genName.description;
 
         homeGenre.appendChild(genLi);
-        console.log(genLi);
-    }
 
+        genLi.addEventListener("click", () => {
+            // Reset the style of the previously clicked li
+            if (previousClickedLi) {
+                previousClickedLi.style.fontWeight = "normal";
+                previousClickedLi.style.color = "#655";
+            }
+
+            // Apply the new style to the clicked li
+            genLi.style.fontWeight = "bolder";
+            genLi.style.color = "white";
+
+            // Update the previous clicked li
+            previousClickedLi = genLi;
+        });
+    });
 }
+    // (let genName of gensDatasUnlocked){
+
+    //     let genLi = document.createElement("li");
+    //     genLi.textContent = genName.description; 
+        
+    //     genLi.addEventListener("click", ()=>{
+    
+    //         genLi.style.fontWeight = "bolder";
+    //         genLi.style.color = "white";
+                
+    //     })
+
+    //     homeGenre.appendChild(genLi);
+    //     console.log(genLi);
+    // }
+
+
+
 
 
