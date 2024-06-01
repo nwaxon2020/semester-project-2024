@@ -188,6 +188,7 @@ function genHomeData(gens) {
         homeGenre.appendChild(genLi);
 
         genLi.addEventListener("click", () => {
+            similarMovies.innerHTML="";
             // Reset the style of the previously clicked li
             if (previousClickedLi) {
                 previousClickedLi.style.fontWeight = "normal";
@@ -200,8 +201,8 @@ function genHomeData(gens) {
 
             // Update the previous clicked li
             previousClickedLi = genLi;
-
             tvMaizeData(genName.description);
+     
         });
     });
 }
