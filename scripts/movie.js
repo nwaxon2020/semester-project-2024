@@ -1,4 +1,5 @@
-////// API KEK : d4beeb5a4amshafb9404318aea55p160adcjsnd5b90d233e8e ///////////////
+////// API KEK : d4beeb5a4amshafb9404318aea55p160adcjsnd5b90d233e8e
+///// API KEY TMDB:ca1214b7a94c79e4f0f94346c8db8b70
 
 // Mobile view port Menu////////////////////////////////////
 const humbug = document.querySelector(".hambug");
@@ -77,7 +78,7 @@ async function tvMaizeData(searchInputRequest){
             alert("Error connecting!! \nPlease Check your internet connection");
         }
         const response = await req.json();
-        console.table(response);
+        console.log(response);
 
         moviesView(response);
 
@@ -133,7 +134,7 @@ function moviesView(data){
         simImg.addEventListener("click", ()=>{
             
             heroImage.src = srcSmilarOrig;
-            heroImage.loadingm = "lazy";
+            heroImage.loading = "lazy";
             console.log("clicked");
         })
 

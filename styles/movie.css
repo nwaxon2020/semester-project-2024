@@ -215,6 +215,12 @@ button:hover{
     height: 15rem;
     border-radius: 2rem;
     border: 1px solid #111;
+    transition: 1s ease-in-out;
+}
+.trilers img:hover{
+    transform: scale(1.1);
+    margin:0px 30px;
+    cursor: pointer;
 }
 .trilers button{
     position: absolute;
