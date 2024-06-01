@@ -184,6 +184,7 @@ function genHomeData(gens) {
         let genLi = document.createElement("li");
         genLi.textContent = genName.description;
 
+
         homeGenre.appendChild(genLi);
 
         genLi.addEventListener("click", () => {
@@ -199,24 +200,11 @@ function genHomeData(gens) {
 
             // Update the previous clicked li
             previousClickedLi = genLi;
+
+            tvMaizeData(genName.description);
         });
     });
 }
-    // (let genName of gensDatasUnlocked){
-
-    //     let genLi = document.createElement("li");
-    //     genLi.textContent = genName.description; 
-        
-    //     genLi.addEventListener("click", ()=>{
-    
-    //         genLi.style.fontWeight = "bolder";
-    //         genLi.style.color = "white";
-                
-    //     })
-
-    //     homeGenre.appendChild(genLi);
-    //     console.log(genLi);
-    // }
 
 
 
