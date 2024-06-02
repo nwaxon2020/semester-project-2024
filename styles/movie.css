@@ -371,6 +371,13 @@ button:hover{
     padding: 20px 50px;
     color: var(--title-color);
 }
+.you-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .you-img img{
     width: 150px;
     height: 200px;

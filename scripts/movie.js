@@ -210,6 +210,8 @@ function genHomeData(gens) {
 
 // Popular Movies APIs /////////////////////////////
 const popularImg = document.getElementById("popTrilar");
+const youMayLike = document.getElementById("you-img");
+
 
 const urlPopular = 'https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US';
 const optionsPopular = {
@@ -264,6 +266,14 @@ function popData(popDatas){
            </div>`
 
         popularImg.appendChild(imgDiv);
+    }
+
+    for(let youLike of popDataReultTv){
+
+        let youPics =  document.createElement("img");
+        youPics.src = youLike.node.primaryImage.url;
+
+        youMayLike.appendChild(youPics);
     }
 
 }
