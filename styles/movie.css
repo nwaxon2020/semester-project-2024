@@ -319,9 +319,9 @@ button:hover{
 }
 
 .img-div div{
-    margin-top: 85%;
+    margin-top: 50%;
     padding: 10px;
-    padding-bottom: 25px;
+    padding-bottom: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
 .img-div h5, .img-div h4{
@@ -329,7 +329,7 @@ button:hover{
     margin-bottom: 0px;
 }
 .img-div i{
-    font-size: 25px;
+    font-size:15px;
     margin-top: 8px;
 }
 .img-div i:hover{

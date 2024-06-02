@@ -247,13 +247,21 @@ function popData(popDatas){
         imgDiv.style.backgroundImage = `url(${popMovie.node.primaryImage.url})`;
         imgDiv.loading = "lazy";
 
+        // genting genre Name for Movies
+        let genInfo;
+
+        const gnr = popMovie.node.titleGenres.genres;
+        for(let gnrs of gnr){
+
+            genInfo = gnrs.genre.text;
+            
+        }
         imgDiv.innerHTML = `
             <div>
-                <h4 class="title">Title:</h4>
-                <h5 class="title-gn">Genre:</h5>
-                <i class="title-info fa fa-info-circle"></i>
+                <h4 class="title"><span style="color: goldenrod; font-weight:Bolder;">Title</span>: ${popMovie.node.originalTitleText.text}</h4>
+                <h5 class="title-gn"><span>Genre</span>: ${genInfo}</h5>
+                <i class="title-info fa fa-info-circle">Year: ${popMovie.node.releaseYear.year}<br> Ratings: ${popMovie.node.ratingsSummary.aggregateRating}</i>
            </div>`
-            
 
         popularImg.appendChild(imgDiv);
     }
