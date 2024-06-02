@@ -266,6 +266,12 @@ function popData(popDatas){
            </div>`
 
         popularImg.appendChild(imgDiv);
+
+        // You may like More Pics ////
+        let youPics2 =  document.createElement("img");
+        youPics2.src = popMovie.node.primaryImage.url;
+
+        youMayLike.appendChild(youPics2);
     }
 
     for(let youLike of popDataReultTv){
@@ -273,7 +279,7 @@ function popData(popDatas){
         let youPics =  document.createElement("img");
         youPics.src = youLike.node.primaryImage.url;
 
-        youMayLike.appendChild(youPics);
+        youMayLike.appendChild(youPics);       
     }
 
 }
