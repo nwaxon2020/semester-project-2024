@@ -208,6 +208,56 @@ function genHomeData(gens) {
 }
 
 
+// Popular Movies APIs /////////////////////////////
+const popularImg = document.getElementById("popTrilar");
 
+const urlPopular = 'https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US';
+const optionsPopular = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'a8260f6512msh5aa686924dfe3fdp15bd85jsn6bfaac25d8fe',
+		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+	}
+};
 
+async function popularApi(){
+    try {
+        const response = await fetch(urlPopular, optionsPopular);
+        if(!response.ok){
+            alert("No internet");
+        }
+        const result = await response.json();
+        popData(result);
+        console.log(result);
 
+    } catch (error) {
+        console.error(error);
+    }
+    
+}
+
+function popData(popDatas){
+    const popDataReultMovies = popDatas.data.movies.edges;
+    const popDataReultTv = popDatas.data.tv.edges;
+
+    for(let popMovie of popDataReultMovies){
+
+        let imgDiv = document.createElement("div");
+        imgDiv.className = "img-div";
+        imgDiv.style.backgroundImage = `url(${popMovie.node.primaryImage.url})`;
+        imgDiv.loading = "lazy";
+
+        imgDiv.innerHTML = `
+            <div>
+                <h4 class="title">Title:</h4>
+                <h5 class="title-gn">Genre:</h5>
+                <i class="title-info fa fa-info-circle"></i>
+           </div>`
+            
+
+        popularImg.appendChild(imgDiv);
+    }
+
+}
+
+popularApi();
