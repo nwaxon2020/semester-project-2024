@@ -16,6 +16,7 @@ const resultFromSearchDiv = document.getElementById("Search-reslt");
 // Hero Image ///////////////////////////////////////
 const movieHeroImageHolder = document.querySelector(".movie-hero-image");
 let movieImage = "Images/test picture.webp";
+let movieInfoz = "Find Your Best Movies and Tv series with us today and always. Never miss out on your favourite shows any day, anytime. Wegot you covered!!!"
 
 // Similar Images to Hero Image ////////////////////////////
 const similarMovies = document.querySelector(".triler-img");
@@ -92,7 +93,7 @@ movieHeroImageHolder.innerHTML =`
 <img src="Images/test picture.webp" alt="game of thrones">
 <div class="hero-info">
     <p>
-        Find Your Best Movies and Tv series with us today and always. Never miss out on your favourite shows any day, anytime. Wegot you covered!!!
+        ${movieInfoz}
     </p>
     <button>More Info!</button>
 </div>`
@@ -100,6 +101,7 @@ movieHeroImageHolder.innerHTML =`
 function moviesView(data){
 
     movieImage = data[0].show.image.original; 
+    movieInfoz = data[0].show.summary.replace(/<\/?[^>]+(>|$)/g, "");
 
     const heroImage = document.createElement("img");
     heroImage.src = movieImage;
@@ -109,11 +111,18 @@ function moviesView(data){
 
     const infoPhrase = document.createElement("p");
     infoPhrase.className = "infoPhrase";
-    infoPhrase.textContent = "Hhelloooooooooooo"
 
     const moreInfoBtn = document.createElement("button");
     moreInfoBtn.textContent = "More Info";
+    // info button //////
+    moreInfoBtn.addEventListener("click",()=>{
 
+        infoPhrase.textContent = "";
+        infoPhrase.textContent = movieInfoz;
+        infoPhrase.style.display = "block";
+
+        infoPhrase.style.animation = "fade ease-in 2s";
+    })
 
     infoHero.appendChild(infoPhrase);
     infoHero.appendChild(moreInfoBtn);
