@@ -1,0 +1,25 @@
+{
+    "newMovies": {
+        "0": {         
+            "movieName": "Cartoon Man",
+            "image": "https://nwaxon2020.github.io/semester-project-2024/Images/test%20picture-3.jpg",
+            "image2": "../Images/test picture-3.jpg",
+            "width": "500",
+            "height": "500"
+        },
+        "1": {
+            "movieName": "Game of thrones",
+            "image": "https://nwaxon2020.github.io/semester-project-2024/Images/test%20picture.webp",
+            "image2": "../Images/test picture.webp.jpg",
+            "width": "500",
+            "height": "500"
+        },
+        "2": {
+            "movieName": "Spider Man",
+            "image": "https://nwaxon2020.github.io/semester-project-2024/Images/test%20picture-2.jpg",
+            "image2": "../Images/test picture-2.jpg",
+            "width": "500",
+            "height": "500"
+        }
+    }
+}
