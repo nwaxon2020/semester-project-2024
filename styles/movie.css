@@ -161,6 +161,7 @@ input:focus{
     padding: 15px;
     padding-bottom: 50px;
     border-radius: 5px;
+    text-align: center;
 }
 .hero-info P::-webkit-scrollbar{
     width: 0px;
