@@ -1,9 +1,5 @@
 
-////// API KEK : d4beeb5a4amshafb9404318aea55p160adcjsnd5b90d233e8e
-///// API KEY TMDB:ca1214b7a94c79e4f0f94346c8db8b70
-
 //// MY json file path : https://nwaxon2020.github.io/semester-project-2024/newMovies.json
-
 
 // Mobile view port Menu
 const humbug = document.querySelector(".hambug");
@@ -40,26 +36,36 @@ humbug.addEventListener("click", () => {
 
 // Light Mode ajuster
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".infoPhrase").style.display = "none";
-
     const savedMode = localStorage.getItem("lightMode");
     if (savedMode) {
         webBody.className = savedMode;
+    } else {
+        // Set default mode if not found in local storage
+        webBody.className = "dark-body"; // Change this to your default mode
     }
+    // Update colors based on the current mode
+    updateColors();
 });
+
 lightMode.forEach(modes => {
     modes.addEventListener("click", () => {
         webBody.classList.toggle("light-body");
+        webBody.classList.toggle("dark-body"); // Toggle between light and dark mode classes
         localStorage.setItem("lightMode", webBody.className);
-
-        if(webBody.classList.contains("light-body")){
-            homeGenre.style.color = "#665";
-        }else{
-            homeGenre.style.color = "#655";
-        }
-
+        // Update colors based on the current mode
+        updateColors();
     });
 });
+
+// Function to update colors based on the current mode
+function updateColors() {
+    if (webBody.classList.contains("light-body")) {
+        homeGenre.style.color = "#000"; // Set color for light mode
+    } else {
+        homeGenre.style.color = "#fff"; // Set color for dark mode
+    }
+}
+
 
 // Input for search
 formSrc.forEach(form => {
