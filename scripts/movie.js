@@ -345,7 +345,8 @@ function youData(youDatas){
 
         youMayLike.appendChild(youPics);
     }
+
+    popularApi();
 }
 
 youMayLikeApi();
-popularApi();
