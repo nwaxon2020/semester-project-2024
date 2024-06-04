@@ -334,6 +334,9 @@
     .light-body nav{
         background-color: #000;
     }
+    .light-body #main .genres li:hover{
+        color: #000;
+    }
     .light-body #main .genres .active{
         color: #111;
         font-weight: bolder;

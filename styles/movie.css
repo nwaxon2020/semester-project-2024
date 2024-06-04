@@ -78,6 +78,10 @@ input:focus{
     outline: solid 1px var(--title-color);
 }
 
+/* ====== genres ============ */
+.genres{
+    color: #665;
+}
 
 /* =========================main part================= */
 #main{

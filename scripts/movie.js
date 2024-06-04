@@ -2,6 +2,9 @@
 ////// API KEK : d4beeb5a4amshafb9404318aea55p160adcjsnd5b90d233e8e
 ///// API KEY TMDB:ca1214b7a94c79e4f0f94346c8db8b70
 
+//// MY json file path : https://nwaxon2020.github.io/semester-project-2024/newMovies.json
+
+
 // Mobile view port Menu
 const humbug = document.querySelector(".hambug");
 const humbugUl = document.querySelector(".hambug-ul");
@@ -48,6 +51,13 @@ lightMode.forEach(modes => {
     modes.addEventListener("click", () => {
         webBody.classList.toggle("light-body");
         localStorage.setItem("lightMode", webBody.className);
+
+        if(webBody.classList.contains("light-body")){
+            homeGenre.style.color = "#665";
+        }else{
+            homeGenre.style.color = "#655";
+        }
+
     });
 });
 
@@ -87,10 +97,16 @@ movieHeroImageHolder.innerHTML = `
     <button>More Info!</button>
 </div>`;
 
+
+// Hero Image
+let currentShow = null;
+
 function moviesView(data) {
     if (data.length > 0 && data[0].show.image) {
+        currentShow = data[0].show;
         movieImage = data[0].show.image.original;
     } else {
+        currentShow = null;
         movieImage = "Images/placeholder.webp"; // Placeholder image if no image is available
     }
 
@@ -98,27 +114,31 @@ function moviesView(data) {
 
     const heroImage = document.createElement("img");
     heroImage.src = movieImage;
-    heroImage.alt = data[0].show.name;
+    heroImage.alt = currentShow ? currentShow.name : "";
 
     const infoHero = document.createElement("div");
     infoHero.className = "hero-info";
 
     const infoPhrase = document.createElement("p");
     infoPhrase.className = "infoPhrase";
-    movieInfoz = data[0].show.summary.replace(/<\/?[^>]+(>|$)/g, "");
+    movieInfoz = currentShow ? currentShow.summary.replace(/<\/?[^>]+(>|$)/g, "") : "";
 
     const moreInfoBtn = document.createElement("button");
     moreInfoBtn.textContent = "More Info";
 
+    let infoVisible = false;
+
     // Info button
     moreInfoBtn.addEventListener("click", () => {
-        if (!infoPhrase.style.display.includes("block")) {
-            infoPhrase.textContent = "";
+        if (!infoVisible) {
             infoPhrase.textContent = movieInfoz;
             infoPhrase.style.display = "block";
-            infoPhrase.style.animation = "fade ease-in 2s";
+            infoVisible = true;
+            moreInfoBtn.textContent = "Hide Info";
         } else {
             infoPhrase.style.display = "none";
+            infoVisible = false;
+            moreInfoBtn.textContent = "More Info";
         }
     });
 
@@ -128,19 +148,24 @@ function moviesView(data) {
     movieHeroImageHolder.appendChild(heroImage);
     movieHeroImageHolder.appendChild(infoHero);
 
+    // Clear similar movies
+    similarMovies.innerHTML = "";
+
     for (let similarMovie of data) {
         if (similarMovie.show.image) {
-            let srcSmilar = similarMovie.show.image.medium;
-            let srcSmilarOrig = similarMovie.show.image.original;
+            let srcSimilar = similarMovie.show.image.medium;
+            let srcSimilarOrig = similarMovie.show.image.original;
 
             const simImg = document.createElement("img");
-            simImg.src = srcSmilar;
+            simImg.src = srcSimilar;
             simImg.loading = "lazy";
 
             simImg.addEventListener("click", () => {
-                heroImage.src = srcSmilarOrig;
+                currentShow = similarMovie.show;
+                heroImage.src = srcSimilarOrig;
                 heroImage.loading = "lazy";
-                console.log("clicked");
+                movieInfoz = currentShow ? currentShow.summary.replace(/<\/?[^>]+(>|$)/g, "") : "";
+                infoPhrase.textContent = movieInfoz;
             });
 
             similarMovies.appendChild(simImg);
@@ -158,42 +183,7 @@ async function tvMaizeDataByGenre(genre) {
         const response = await req.json();
         console.log(response);
         if (response.length > 0) {
-            // Update the hero image and info
-            const firstShow = response[0];
-            if (firstShow.show.image) {
-                movieHeroImageHolder.innerHTML = `
-                    <img src="${firstShow.show.image.original}" alt="${firstShow.show.name}">
-                    <div class="hero-info">
-                        <p>${firstShow.show.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
-                        <button>More Info!</button>
-                    </div>`;
-            } else {
-                movieHeroImageHolder.innerHTML = `
-                    <img src="Images/placeholder.webp" alt="No image available">
-                    <div class="hero-info">
-                        <p>${firstShow.show.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>
-                        <button>More Info!</button>
-                    </div>`;
-            }
-            // Update similar movies
-            similarMovies.innerHTML = "";
-            for (let similarMovie of response) {
-                if (similarMovie.show.image) {
-                    let srcSmilar = similarMovie.show.image.medium;
-                    let srcSmilarOrig = similarMovie.show.image.original;
-
-                    const simImg = document.createElement("img");
-                    simImg.src = srcSmilar;
-                    simImg.loading = "lazy";
-
-                    simImg.addEventListener("click", () => {
-                        movieHeroImageHolder.querySelector("img").src = srcSmilarOrig;
-                        console.log("clicked");
-                    });
-
-                    similarMovies.appendChild(simImg);
-                }
-            }
+            moviesView(response);
         }
     } catch (error) {
         console.log("error found " + error);
@@ -201,19 +191,14 @@ async function tvMaizeDataByGenre(genre) {
 }
 
 
-// Genre part
-const url = 'https://imdb8.p.rapidapi.com/title/list-popular-genres';
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a8260f6512msh5aa686924dfe3fdp15bd85jsn6bfaac25d8fe',
-        'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
-    }
-};
+
+// Genre part //////////////////////////////////////
+const apiKey = 'ca1214b7a94c79e4f0f94346c8db8b70'; // Your TMDB API Key
+const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
 
 async function genrHome() {
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(url);
         if (!response.ok) {
             alert("Error in network connection!!!");
             return;
@@ -235,46 +220,64 @@ function genHomeData(gens) {
 
     gensDatasUnlocked.forEach((genName) => {
         let genLi = document.createElement("li");
-        genLi.textContent = genName.description;
+        genLi.textContent = genName.name;
 
         homeGenre.appendChild(genLi);
 
-        genLi.addEventListener("click", () => {
+        genLi.addEventListener("click", async () => {
             // Reset the style of the previously clicked li
             if (previousClickedLi) {
                 previousClickedLi.style.fontWeight = "normal";
-                previousClickedLi.style.color = "#655";
+                previousClickedLi.style.color = "#665";
             }
 
             // Apply the new style to the clicked li
             genLi.style.fontWeight = "bolder";
-            genLi.style.color = "white";
+            if(webBody.classList.contains("light-body")){
+                genLi.style.color = "Black";
+            }else{
+                genLi.style.color = "white";
+            }
 
             // Update the previous clicked li
             previousClickedLi = genLi;
 
-            // Fetch movies of the clicked genre
-            tvMaizeDataByGenre(genName.description);
+            // Fetch TV shows of the clicked genre
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${genName.id}`);
+                if (!response.ok) {
+                    throw new Error("Error fetching TV shows by genre");
+                }
+                const data = await response.json();
+                const tvShows = data.results.map(show => ({
+                    show: {
+                        id: show.id,
+                        name: show.name,
+                        image: {
+                            original: `https://image.tmdb.org/t/p/original${show.poster_path}`,
+                            medium: `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                        },
+                        summary: show.overview
+                    }
+                }));
+                moviesView(tvShows);
+            } catch (error) {
+                console.error("Error:", error);
+                // Handle error
+            }
         });
     });
 }
 
-// Popular Movies APIs
-const popularImg = document.getElementById("popTrilar");
-const youMayLike = document.getElementById("you-img");
 
-const urlPopular = 'https://imdb8.p.rapidapi.com/title/v2/get-popular?first=20&country=US&language=en-US';
-const optionsPopular = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'a8260f6512msh5aa686924dfe3fdp15bd85jsn6bfaac25d8fe',
-        'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
-    }
-};
+// popular Movies ////////////////////////////////////////
+const popularImg = document.getElementById("popTrilar");
+
+const urlPopular = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${apiKey}`;
 
 async function popularApi() {
     try {
-        const response = await fetch(urlPopular, optionsPopular);
+        const response = await fetch(urlPopular);
         if (!response.ok) {
             alert("No internet");
         }
@@ -288,42 +291,61 @@ async function popularApi() {
 }
 
 function popData(popDatas) {
-    const popDataReultMovies = popDatas.data.movies.edges;
-    const popDataReultTv = popDatas.data.tv.edges;
-
+    const popDataReultMovies = popDatas.results;
+    
     for (let popMovie of popDataReultMovies) {
         let imgDiv = document.createElement("div");
         imgDiv.className = "img-div";
-        imgDiv.style.backgroundImage = `url(${popMovie.node.primaryImage.url})`;
+        imgDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500/${popMovie.poster_path})`;
         imgDiv.loading = "lazy";
 
-        // Getting genre name for movies
-        let genInfo;
-
-        const gnr = popMovie.node.titleGenres.genres;
-        for (let gnrs of gnr) {
-            genInfo = gnrs.genre.text;
-        }
         imgDiv.innerHTML = `
             <div>
-                <h4 class="title"><span style="color: goldenrod; font-weight:Bolder;">Title</span>: ${popMovie.node.originalTitleText.text}</h4>
-                <h5 class="title-gn"><span>Genre</span>: ${genInfo}</h5>
-                <i class="title-info fa fa-info-circle">Year: ${popMovie.node.releaseYear.year}<br> Ratings: ${popMovie.node.ratingsSummary.aggregateRating}</i>
+                <h4 class="title"><span style="color: goldenrod; font-weight:Bolder;">Title</span>: ${popMovie.title}</h4>
+                <h5 class="title-gn"><span>Genre</span>: ${popMovie.genre_ids}</h5>
+                <h6>Release date: ${popMovie.release_date}<br> Ratings: ${popMovie.vote_average}</h6>
            </div>`;
 
         popularImg.appendChild(imgDiv);
 
-        // You may like more pics
-        let youPics2 = document.createElement("img");
-        youPics2.src = popMovie.node.primaryImage.url;
-        youMayLike.appendChild(youPics2);
-    }
-
-    for (let youLike of popDataReultTv) {
         let youPics = document.createElement("img");
-        youPics.src = youLike.node.primaryImage.url;
+        youPics.src = `https://image.tmdb.org/t/p/w500/${popMovie.poster_path}`;
+
         youMayLike.appendChild(youPics);
     }
 }
 
+
+// You may Like ///////////////////////////////////
+const youMayLike = document.getElementById("you-img");
+
+const urlYouMayLike = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=1&api_key=${apiKey}`;
+
+async function youMayLikeApi() {
+    try {
+        const response = await fetch(urlYouMayLike);
+        if (!response.ok) {
+            alert("No internet");
+        }
+        const result = await response.json();
+        youData(result);
+        console.log(result);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function youData(youDatas){
+    const popDataReultTv = youDatas.results;
+
+    for (let youLike of popDataReultTv) {
+        let youPics = document.createElement("img");
+        youPics.src = `https://image.tmdb.org/t/p/w500/${youLike.poster_path}`;
+
+        youMayLike.appendChild(youPics);
+    }
+}
+
+youMayLikeApi();
 popularApi();
