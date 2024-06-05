@@ -15,13 +15,13 @@
     padding: 1.5rem;
     color: #fff;
 }
-#join-us form{
+#join-us .regForm{
     margin: 0 auto;
     width: 100%;
     max-width: 25rem;
     text-align: center;
 }
-#join-us form input{
+#join-us .regForm input{
     display: block;
     padding: 0.75rem;
     width: 90%;
@@ -30,28 +30,29 @@
     border: none;
     margin: 2rem auto;
 }
-#join-us form input[name="checked"]{
+
+#join-us .regForm input[name="subscribed"]{
     display: inline;
     width: 5%;
     margin-top: -20px;
 }
-#join-us form div{
+#join-us .regForm div{
     margin-top: -25px;
     width: 100%;
 }
-#join-us form h4{
+#join-us .regForm h4{
     display: inline;
     margin-right: 40px;
 }
-#join-us form p{
+#join-us .regForm p{
     display: inline;
     margin: 2px;
 }
-#join-us form .p{
+#join-us .regForm .p{
     margin-right: 1.5rem;
 }
 
-#join-us form input[type="radio"]{
+#join-us .regForm input[type="radio"]{
     display: inline;
     width: 10px;
     padding: 50px;
@@ -59,10 +60,10 @@
 input:focus{
     outline: none;
 }
-#join-us form input:required{
+#join-us .regForm input:required{
     border-left: 2px solid red;
 }
-#join-us form input:valid{
+#join-us .regForm input:valid{
     border-left: 3px solid green;
 }
 
@@ -87,7 +88,7 @@ input:focus{
         width: 95%;
     }
     
-    #join-us form input{
+    #join-us .regForm input{
         width: 100%;
     }
     
